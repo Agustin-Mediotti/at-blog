@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          root in nodejs-project on  trunk via  17.6.0
         </p>
         <a
           className="App-link"

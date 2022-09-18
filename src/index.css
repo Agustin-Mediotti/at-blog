@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Hack';
+  src: url(./fonts/hack/Hack\ Regular\ Nerd\ Font\ Complete.ttf) format('truetype');
+}
