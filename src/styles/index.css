@@ -7,12 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 @font-face {
   font-family: 'Hack';
-  src: url(./fonts/hack/Hack\ Regular\ Nerd\ Font\ Complete.ttf) format('truetype');
+  src: url(../assets/fonts/hack/Hack_Regular_Nerd_Font_Complete.ttf) format('truetype');
 }

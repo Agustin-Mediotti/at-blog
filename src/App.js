@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './assets/img/logo.svg';
 import './App.css';
 
 function App() {
@@ -9,14 +9,6 @@ function App() {
         <p>
           root in nodejs-project on  trunk via  17.6.0
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
