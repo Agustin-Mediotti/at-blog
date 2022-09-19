@@ -24,8 +24,7 @@ function TerminalView(props) {
   };
 
   const error = {
-  color: themes["my-custom-theme"].errorColor,
-  fontWeight: "bold"
+  color: themes["my-custom-theme"].errorColor
   };
 
   const folder = {
