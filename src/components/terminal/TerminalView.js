@@ -1,5 +1,6 @@
 import { ReactTerminal } from "react-terminal";
 import '../../styles/TerminalView.css';
+import dirSchema from '../../context/dir.json'
 
 function TerminalView(props) {
 
@@ -85,12 +86,9 @@ function TerminalView(props) {
 
   const commands = {
     whoami: "net_creature",
-    help:
-      `use cd to navigate trough directories \n
-      cd.. to go back one directory back \n
-      pwd to print directory \n
-      echo to print text in console \n
-      ls to print the content of the current directory`,
+    help: () => {
+      return helpMessage
+    },
     cd: (directory) => {
       currentDirArr.push(directory);
       lastItem = directory;
@@ -101,18 +99,54 @@ function TerminalView(props) {
     pwd: () => {
       return `${currentDirArr.join("/") + "/"}`;
     },
-    echo: (message) => `${message}`,
+    echo: (message) => { return blogEntry },
     ls: () => {
       if (currentDirArr.join("/") + "/" == dir.blog) {
-        return "entry logs here"
+        let content = []
+        dirSchema["~"]["/Documents"]["/blog"].forEach(element => {
+          content.push('"' + element.title + '"')
+        });
+        return content.join(" ")
       }
+    },
+    cat: (fileName) => {
+      return blogEntry
     }
   };
 
+  let blogEntry = (
+    <span>
+      {dirSchema["~"]["/Documents"]["/blog"][0].title}
+      <br />
+      {dirSchema["~"]["/Documents"]["/blog"][0].subtitle}
+      <br />
+      {dirSchema["~"]["/Documents"]["/blog"][0].description}
+      <br />
+      <br />
+      {dirSchema["~"]["/Documents"]["/blog"][0].body}
+      <br />
+      {dirSchema["~"]["/Documents"]["/blog"][0].date}
+      <br />
+    </span>
+  )
+
+  let helpMessage = (
+    <span>
+      {'cd navigate trough directories'}
+      <br />
+      {' cd.. to go back one directory back'}
+      <br />
+      {'pwd print directory'}
+      <br />
+      {'echo print text in console'}
+      <br />
+      {'ls print the content of the current directory'}
+    </span>
+  )
+
   let welcomeMsg = (
     <span>
-      {" "}
-      Type "help" for more information.
+      {'Type "help" for more information.'}
       <br />
       <br />
     </span>
