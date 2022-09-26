@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './styles/index.css';
+import TerminalView from './components/terminal/TerminalView'
+import { TerminalContextProvider } from "react-terminal";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <TerminalContextProvider>
+      <TerminalView />
+    </TerminalContextProvider>
   </React.StrictMode>
 );
 

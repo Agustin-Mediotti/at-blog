@@ -1,0 +1,26 @@
+{
+    "~": {
+        "/Documents": {
+            "/blog": [
+                {
+                    "id": "1",
+                    "title": "First Blog Entry",
+                    "subtitle": "this is a subtitle",
+                    "description": "Brief description of the blog entry",
+                    "date": "09/26/2022 02:48PM",
+                    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                },
+                {
+                    "id": "2",
+                    "title": "Second Blog Entry",
+                    "subtitle": "this is a subtitle",
+                    "description": "Brief description of the blog entry",
+                    "date": "09/26/2022 02:53PM",
+                    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                }
+            ]
+        },
+        "/Desktop": [],
+        "/Images": []
+    }
+}
