@@ -7,24 +7,24 @@ function TerminalView(props) {
 
   let lastItem = currentDirArr[currentDirArr.length - 1];
 
-    const themes = {
-  "my-custom-theme": {
-    themeBGColor: "#201f1e",
-    themeToolbarColor: "#DBDBDB",
-    themeColor: "#FFFEFC",
-    themePromptColor: "#FFFEFC",
-    promptColor: "#15a24d",
-    errorColor: "#b52606",
-    folderColor: "#96c0c9",
-    branchColor: "#bc69b3",
-    versionColor: "#15a24d",
-    linkColor: "#e5e5e5"
-  }
-  // etc etc
+  const themes = {
+    "my-custom-theme": {
+      themeBGColor: "#201f1e",
+      themeToolbarColor: "#DBDBDB",
+      themeColor: "#FFFEFC",
+      themePromptColor: "#FFFEFC",
+      promptColor: "#15a24d",
+      errorColor: "#b52606",
+      folderColor: "#96c0c9",
+      branchColor: "#bc69b3",
+      versionColor: "#15a24d",
+      linkColor: "#e5e5e5"
+    }
+    // etc etc
   };
 
   const error = {
-  color: themes["my-custom-theme"].errorColor
+    color: themes["my-custom-theme"].errorColor
   };
 
   const folder = {
@@ -47,11 +47,17 @@ function TerminalView(props) {
     fontWeight: "bold"
   }
 
-    const prompt = (
+  const dir = {
+    home: "~/",
+    documents: "~/Documents/",
+    blog: "~/Documents/blog/"
+  }
+
+  const prompt = (
     <>
       <br />
       <span style={promptColor}>
-         ❯
+        ❯
       </span>
     </>
   )
@@ -72,24 +78,35 @@ function TerminalView(props) {
       </span>
       <br />
       <span style={promptColor}>
-         ❯
+        ❯
       </span>
     </>
   )
 
   const commands = {
     whoami: "net_creature",
-   cd: (directory) => {
+    help:
+      `use cd to navigate trough directories \n
+      cd.. to go back one directory back \n
+      pwd to print directory \n
+      echo to print text in console \n
+      ls to print the content of the current directory`,
+    cd: (directory) => {
       currentDirArr.push(directory);
       lastItem = directory;
     },
-    "cd ..": () => {
+    "cd..": () => {
       currentDirArr.pop();
     },
     pwd: () => {
       return `${currentDirArr.join("/") + "/"}`;
     },
-    echo: (message) => `${message}`
+    echo: (message) => `${message}`,
+    ls: () => {
+      if (currentDirArr.join("/") + "/" == dir.blog) {
+        return "entry logs here"
+      }
+    }
   };
 
   let welcomeMsg = (
